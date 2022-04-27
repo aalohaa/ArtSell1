@@ -18,7 +18,7 @@
             android:layout_height="190dp"
             app:riv_corner_radius="14dp"
             android:scaleType="centerCrop"
-            android:src="@mipmap/offers3"/>
+            android:src="@mipmap/artselllogo"/>
         <TextView
             android:id="@+id/pop_name"
             android:layout_width="wrap_content"
