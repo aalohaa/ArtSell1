@@ -31,7 +31,7 @@
         android:drawableLeft="@drawable/ic_baseline_search_24"
         android:background="@drawable/search_gb"
         android:padding="13dp"
-        android:hint="Search Your Item Here..."
+        android:hint="I want to find..."
         android:drawablePadding="5dp"/>
 
     <LinearLayout
@@ -47,7 +47,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:fontFamily="@font/alice"
-            android:text="Popular Products"
+            android:text="Popular Right Now"
             android:textSize="18sp"
             android:textStyle="bold"/>
 
@@ -61,7 +61,7 @@
             android:gravity="end"
             android:layout_marginRight="7dp"
             android:textSize="16sp"
-            android:textColor="@color/purple_700"/>
+            android:textColor="@color/black"/>
 
     </LinearLayout>
 
@@ -98,7 +98,7 @@
             android:gravity="end"
             android:layout_marginRight="7dp"
             android:textSize="16sp"
-            android:textColor="@color/purple_700"/>
+            android:textColor="@color/black"/>
 
     </LinearLayout>
 
@@ -106,7 +106,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
-        android:id="@+id/explore_rec"/>
+        android:id="@+id/explore_rec" />
 
     <LinearLayout
         android:layout_marginLeft="10dp"
@@ -135,7 +135,7 @@
             android:gravity="end"
             android:layout_marginRight="7dp"
             android:textSize="16sp"
-            android:textColor="@color/purple_700"/>
+            android:textColor="@color/black"/>
 
     </LinearLayout>
 

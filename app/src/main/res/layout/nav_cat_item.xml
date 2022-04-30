@@ -2,25 +2,27 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginRight="30dp"
+    android:layout_marginLeft="30dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_marginTop="7dp"
+    android:layout_marginTop="10dp"
     app:cardCornerRadius="5dp"
     app:cardElevation="4dp"
     android:background="#F0F0F0">
 
     <LinearLayout
-        android:background="#DFFFD1"
+        android:background="#FFFFFF"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal">
 
         <ImageView
-            android:background="@drawable/border"
             android:id="@+id/cat_nav_img"
+            android:layout_width="151dp"
+            android:layout_height="150dp"
+            android:background="@drawable/border"
             android:scaleType="centerInside"
-            android:src="@drawable/fruits"
-            android:layout_width="150dp"
-            android:layout_height="150dp"/>
+            android:src="@drawable/profile" />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -28,47 +30,52 @@
             android:orientation="vertical">
 
             <TextView
-                android:fontFamily="@font/alice"
                 android:id="@+id/nav_cat_name"
-                android:layout_width="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Name"
+                android:gravity="center"
                 android:ellipsize="end"
+                android:fontFamily="@font/lato_bold"
                 android:maxLines="1"
                 android:singleLine="true"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                android:textColor="@color/black"/>
+                android:text="Name"
+                android:textColor="@color/black"
+                android:textSize="24sp"/>
 
             <TextView
-                android:fontFamily="@font/alice"
+                android:fontFamily="@font/lato"
                 android:id="@+id/nav_cat_description"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:text="Description"
                 android:ellipsize="end"
                 android:maxLines="2"
                 android:singleLine="false"
-                android:textColor="@color/black"/>
+                android:textSize="18sp"
+                android:textColor="@color/colorGrey"/>
 
             <TextView
-                android:fontFamily="@font/alice"
-                android:layout_width="wrap_content"
+                android:fontFamily="@font/lato"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:text="Discount :"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:textColor="@color/black"/>
 
             <TextView
-                android:fontFamily="@font/alice"
+                android:fontFamily="@font/lato"
                 android:id="@+id/nav_cat_discount"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:text="20% OFF"
                 android:textSize="22sp"
                 android:textStyle="bold"
-                android:textColor="@color/purple_700"/>
+                android:textColor="#7DDCE5"/>
 
             <ImageView
                 android:layout_width="wrap_content"

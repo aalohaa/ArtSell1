@@ -56,12 +56,13 @@ public class ProfileFragment extends Fragment {
         update = root.findViewById(R.id.update);
 
         database.getReference().child("Users").child(FirebaseAuth.getInstance().getUid())
+        //database.getReference().child("Users").child(currentUserID)
                 .addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         UserModel userModel = snapshot.getValue(UserModel.class);
 
-//                        Glide.with(getContext()).load(userModel.getProfileImg()).into(profileImg);
+                        Glide.with(getContext()).load(userModel.getProfileImg()).into(profileImg);
                     }
 
                     @Override

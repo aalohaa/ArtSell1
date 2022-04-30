@@ -14,7 +14,7 @@
         android:fontFamily="@font/aclonica"
         android:text="Your order has been placed"
         android:textAlignment="center"
-        android:textColor="@color/purple_700"
+        android:textColor="@color/black"
         android:textSize="22sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"

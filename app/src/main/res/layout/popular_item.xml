@@ -18,19 +18,19 @@
             android:layout_height="190dp"
             app:riv_corner_radius="14dp"
             android:scaleType="centerCrop"
-            android:src="@mipmap/artselllogo"/>
+            android:src="@drawable/profile"/>
         <TextView
             android:id="@+id/pop_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/alice"
+            android:fontFamily="@font/lato_bold"
             android:text="Popular Products"
-            android:textSize="19sp"
-            android:textStyle="bold"/>
+            android:textSize="19sp" />
             <TextView
                 android:id="@+id/pop_des"
                 android:layout_width="190dp"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/lato"
                 android:ellipsize="end"
                 android:maxLines="1"
                 android:singleLine="true"
@@ -53,7 +53,7 @@
                 android:layout_marginTop="3dp"
                 android:text="5.0"
                 android:layout_weight="1"
-                android:fontFamily="@font/alice"/>
+                android:fontFamily="@font/lato_bold"/>
 
             <TextView
                 android:id="@+id/pop_discount"
@@ -61,10 +61,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="3dp"
                 android:text="Discount 20% Off"
-                android:textColor="@color/purple_700"
-                android:textStyle="bold"
+                android:textColor="@color/black"
                 android:gravity="end"
-                android:fontFamily="@font/alice"/>
+                android:fontFamily="@font/lato_bold"/>
         </LinearLayout>
 
 
