@@ -27,6 +27,8 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
+import java.util.Objects;
+
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class ProfileFragment extends Fragment {
@@ -55,8 +57,7 @@ public class ProfileFragment extends Fragment {
         address = root.findViewById(R.id.profile_address);
         update = root.findViewById(R.id.update);
 
-        database.getReference().child("Users").child(FirebaseAuth.getInstance().getUid())
-        //database.getReference().child("Users").child(currentUserID)
+        database.getReference().child("Users").child(Objects.requireNonNull(FirebaseAuth.getInstance().getUid()))
                 .addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {

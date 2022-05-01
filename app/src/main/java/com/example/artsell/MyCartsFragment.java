@@ -94,6 +94,8 @@ public class MyCartsFragment extends Fragment {
                         progressBar.setVisibility(View.GONE);
                         recyclerView.setVisibility(View.VISIBLE);
                     }
+                    
+                    calculateTotalAmount(cartModelList);
                 }
             }
         });
@@ -108,6 +110,16 @@ public class MyCartsFragment extends Fragment {
 
 
         return  root;
+    }
+
+    private void calculateTotalAmount(List<MyCartModel> cartModelList) {
+
+        double totalAmount = 0.0;
+        for (MyCartModel myCartModel : cartModelList) {
+            totalAmount += myCartModel.getTotalPrice();
+        }
+
+        overTotalAmount.setText("Total Amount: " + totalAmount);
     }
 
     public BroadcastReceiver mMessageReceiver = new BroadcastReceiver() {
