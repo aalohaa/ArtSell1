@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:fontFamily="@font/aclonica"
+        android:fontFamily="@font/lato_bold"
         android:text="Welcome To Artsell"
         android:textColor="@color/black"
         android:textSize="20sp"
@@ -24,7 +24,7 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/aclonica"
+        android:fontFamily="@font/lato_bold"
         android:text="Join Us"
         android:textColor="@color/black"
         android:textSize="18sp"
@@ -68,7 +68,7 @@
                 android:src="@drawable/key" />
 
             <TextView
-                android:fontFamily="@font/alice"
+                android:fontFamily="@font/lato_bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
@@ -93,7 +93,7 @@
                 android:src="@drawable/registration" />
 
             <TextView
-                android:fontFamily="@font/alice"
+                android:fontFamily="@font/lato_bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
@@ -109,7 +109,7 @@
         android:id="@+id/textView4"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/alice"
+        android:fontFamily="@font/lato_bold"
         android:text="LESSSGOOO"
         android:textAlignment="center"
         android:textColor="#000000"
