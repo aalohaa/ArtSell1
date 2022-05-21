@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -69,27 +70,38 @@ public class RegistrationActivity extends AppCompatActivity {
 
     private void createUser() {
 
-        String userName = name.getText().toString();
-        String userEmail = email.getText().toString();
-        String userPassword = password.getText().toString();
+        String userName = name.getText().toString().trim();
+        String userEmail = email.getText().toString().trim();
+        String userPassword = password.getText().toString().trim();
 
-        if (TextUtils.isEmpty(userName)){
-            Toast.makeText(this, "Name is Empty!", Toast.LENGTH_SHORT).show();
-            return;
-        }
-
-        if (TextUtils.isEmpty(userEmail)){
-            Toast.makeText(this, "Email is Empty!", Toast.LENGTH_SHORT).show();
+        if(userName.isEmpty()){
+            name.setError("Name is empty!");
+            name.requestFocus();
             return;
         }
 
 
-        if (TextUtils.isEmpty(userPassword)){
-            Toast.makeText(this, "Password is Empty!", Toast.LENGTH_SHORT).show();
+        if(userEmail.isEmpty()){
+            email.setError("Email is empty!");
+            email.requestFocus();
             return;
         }
-        if (userPassword.length() < 6){
-            Toast.makeText(this, "Password Length must be greater then 6 letter", Toast.LENGTH_SHORT).show();
+
+        if(!Patterns.EMAIL_ADDRESS.matcher(userEmail).matches()){
+            email.setError("Please provide valid email!");
+            email.requestFocus();
+            return;
+        }
+
+        if(userPassword.isEmpty()){
+            password.setError("Password is empty!");
+            password.requestFocus();
+            return;
+        }
+
+        if(userPassword.length() < 6){
+            password.setError("Password length must be more than 6 characters!");
+            password.requestFocus();
             return;
         }
 
@@ -109,11 +121,10 @@ public class RegistrationActivity extends AppCompatActivity {
                             startActivity(new Intent(RegistrationActivity.this, HomeActivity.class));
                         }
                         else {
-                            progressBar.setVisibility(View.GONE);
                             Toast.makeText(RegistrationActivity.this, "Error:"+task.getException(), Toast.LENGTH_SHORT).show();
+                            progressBar.setVisibility(View.GONE);
                         }
                     }
                 });
-
     }
 }

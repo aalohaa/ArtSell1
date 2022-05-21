@@ -16,6 +16,7 @@ import androidx.fragment.app.Fragment;
 
 import com.bumptech.glide.Glide;
 import com.example.artsell.R;
+import com.example.artsell.activities.RegistrationActivity;
 import com.example.artsell.models.UserModel;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -57,20 +58,26 @@ public class ProfileFragment extends Fragment {
         address = root.findViewById(R.id.profile_address);
         update = root.findViewById(R.id.update);
 
-        database.getReference().child("Users").child(Objects.requireNonNull(FirebaseAuth.getInstance().getUid()))
-                .addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        UserModel userModel = snapshot.getValue(UserModel.class);
+        try {
+            database.getReference().child("Users").child(Objects.requireNonNull(FirebaseAuth.getInstance().getUid()))
+                    .addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            UserModel userModel = snapshot.getValue(UserModel.class);
 
-                        Glide.with(getContext()).load(userModel.getProfileImg()).into(profileImg);
-                    }
+                            Glide.with(getContext()).load(userModel.getProfileImg()).into(profileImg);
+                        }
 
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
 
-                    }
-                });
+                        }
+                    }); } catch (Exception e) {
+
+            Intent intent = new Intent(getActivity(), RegistrationActivity.class);
+            startActivity(intent);
+
+        }
 
         profileImg.setOnClickListener(new View.OnClickListener() {
             @Override
