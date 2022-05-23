@@ -1,4 +1,4 @@
-package com.example.artsell;
+package com.example.artsell.activities;
 
 import android.content.Intent;
 import android.graphics.drawable.Animatable;
@@ -15,11 +15,16 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import com.example.artsell.activities.LoginActivity;
+import com.example.artsell.R;
 import com.example.artsell.databinding.ActivityMainBinding;
-import com.example.artsell.ui.category.CategoryFragment;
-import com.example.artsell.ui.home.HomeFragment;
-import com.example.artsell.ui.profile.ProfileFragment;
+import com.example.artsell.fragments.CategoryFragment;
+import com.example.artsell.fragments.ChatsFragment;
+import com.example.artsell.fragments.HomeFragment;
+import com.example.artsell.fragments.MyCartsFragment;
+import com.example.artsell.fragments.OffersFragment;
+import com.example.artsell.fragments.ProfileFragment;
+import com.example.artsell.fragments.MyOrdersFragment;
+import com.example.artsell.fragments.NewProductsFragment;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -103,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
         fabNewProducts.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View View) {
-                replaceFragment(new newProductsFragment());
+                replaceFragment(new NewProductsFragment());
                 animateFab();
             }
         });
@@ -122,10 +127,18 @@ public class MainActivity extends AppCompatActivity {
                     replaceFragment(new HomeFragment());
                     break;
                 case R.id.nav_my_orders:
-                    replaceFragment(new myOrdersFragment());
+                    if (auth.getCurrentUser() == null) {
+                        startActivity(new Intent(MainActivity.this, LoginActivity.class));
+                    } else {
+                    replaceFragment(new MyOrdersFragment());
+                    }
                     break;
                 case R.id.scene_chat:
+                    if (auth.getCurrentUser() == null) {
+                        startActivity(new Intent(MainActivity.this, LoginActivity.class));
+                    } else {
                     replaceFragment(new ChatsFragment());
+                    }
                     break;
                 case R.id.scene_btn:
                     break;
@@ -176,5 +189,11 @@ public class MainActivity extends AppCompatActivity {
 
     private void showToast(String message){
         Toast.makeText( this, message, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(MainActivity.this, MainActivity.class);
+        startActivity(intent);
     }
 }

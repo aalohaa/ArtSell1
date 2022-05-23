@@ -19,12 +19,12 @@ import com.example.artsell.models.PopularModel;
 
 import java.util.List;
 
-public class PopularAdapters extends RecyclerView.Adapter<PopularAdapters.ViewHolder> {
+public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.ViewHolder> {
 
     private Context context;
     private List<PopularModel> popularModelList;
 
-    public PopularAdapters(Context context, List<PopularModel> popularModelList) {
+    public PopularAdapter(Context context, List<PopularModel> popularModelList) {
         this.context = context;
         this.popularModelList = popularModelList;
     }
@@ -40,9 +40,7 @@ public class PopularAdapters extends RecyclerView.Adapter<PopularAdapters.ViewHo
 
         Glide.with(context).load(popularModelList.get(position).getImg_url()).into(holder.popImg);
         holder.name.setText(popularModelList.get(position).getName());
-        holder.rating.setText(popularModelList.get(position).getRating());
         holder.description.setText(popularModelList.get(position).getDescription());
-        holder.discount.setText(popularModelList.get(position).getDiscount());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,8 +66,6 @@ public class PopularAdapters extends RecyclerView.Adapter<PopularAdapters.ViewHo
             popImg =itemView.findViewById(R.id.pop_img);
             name =itemView.findViewById(R.id.pop_name);
             description =itemView.findViewById(R.id.pop_des);
-            discount =itemView.findViewById(R.id.pop_discount);
-            rating =itemView.findViewById(R.id.pop_rating);
         }
     }
 }

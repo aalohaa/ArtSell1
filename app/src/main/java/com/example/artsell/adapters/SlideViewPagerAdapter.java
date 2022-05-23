@@ -1,4 +1,4 @@
-package com.example.artsell;
+package com.example.artsell.adapters;
 
 import android.content.Context;
 import android.content.Intent;
@@ -11,6 +11,10 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.viewpager.widget.PagerAdapter;
+
+import com.example.artsell.activities.MainActivity;
+import com.example.artsell.R;
+import com.example.artsell.activities.SlideActivity;
 
 public class SlideViewPagerAdapter extends PagerAdapter {
 
@@ -54,7 +58,7 @@ public class SlideViewPagerAdapter extends PagerAdapter {
         btnGetStarted.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(ctx,MainActivity.class);
+                Intent intent=new Intent(ctx, MainActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK| Intent.FLAG_ACTIVITY_NEW_TASK);
                 ctx.startActivity(intent);
             }

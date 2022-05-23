@@ -1,4 +1,4 @@
-package com.example.artsell.ui.profile;
+package com.example.artsell.fragments;
 
 
 import androidx.annotation.NonNull;
@@ -13,14 +13,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.artsell.MainActivity;
 import com.example.artsell.R;
 import com.example.artsell.activities.LoginActivity;
-import com.example.artsell.databinding.FragmentProfileBinding;
 import com.example.artsell.models.Users;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -46,7 +43,6 @@ public class ProfileFragment extends Fragment {
     TextView profileEmail;
     EditText txtUsername, etStatus;
     CircleImageView profileImg;
-    ImageView plus, backArrow;
     Button saveButton, logoutBtn;
 
     public ProfileFragment() {
@@ -63,21 +59,11 @@ public class ProfileFragment extends Fragment {
         db = FirebaseDatabase.getInstance();
 
         profileEmail = root.findViewById(R.id.profile_email);
-        backArrow = root.findViewById(R.id.backArrow);
         saveButton = root.findViewById(R.id.saveButton);
         etStatus = root.findViewById(R.id.etStatus);
         txtUsername = root.findViewById(R.id.txtUsername);
         logoutBtn = root.findViewById(R.id.logoutBtn);
         profileImg = root.findViewById(R.id.profileImg);
-        plus = root.findViewById(R.id.plus);
-
-        backArrow.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), MainActivity.class);
-                startActivity(intent);
-            }
-        });
 
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -120,7 +106,7 @@ public class ProfileFragment extends Fragment {
 
                     }
                 });
-        plus.setOnClickListener(new View.OnClickListener() {
+        profileImg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();

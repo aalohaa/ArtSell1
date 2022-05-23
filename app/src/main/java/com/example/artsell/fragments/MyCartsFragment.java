@@ -1,4 +1,4 @@
-package com.example.artsell;
+package com.example.artsell.fragments;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -19,6 +19,7 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.example.artsell.R;
 import com.example.artsell.activities.PlacedOrderActivity;
 import com.example.artsell.adapters.MyCartAdapter;
 import com.example.artsell.models.MyCartModel;

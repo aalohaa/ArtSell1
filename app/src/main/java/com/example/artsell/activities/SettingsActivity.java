@@ -10,10 +10,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
-import com.example.artsell.MainActivity;
 import com.example.artsell.R;
-import com.example.artsell.models.Users;
 import com.example.artsell.databinding.ActivitySettingsBinding;
+import com.example.artsell.models.Users;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;

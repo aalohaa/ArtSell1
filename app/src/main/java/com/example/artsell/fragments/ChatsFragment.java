@@ -1,4 +1,4 @@
-package com.example.artsell;
+package com.example.artsell.fragments;
 
 import android.os.Bundle;
 

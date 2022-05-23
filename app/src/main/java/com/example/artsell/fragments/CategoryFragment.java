@@ -1,4 +1,4 @@
-package com.example.artsell.ui.category;
+package com.example.artsell.fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,9 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.artsell.R;
 import com.example.artsell.adapters.NavCategoryAdapter;
-import com.example.artsell.adapters.PopularAdapters;
 import com.example.artsell.models.NavCategoryModel;
-import com.example.artsell.models.PopularModel;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.FirebaseFirestore;

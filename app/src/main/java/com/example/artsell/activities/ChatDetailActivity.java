@@ -8,11 +8,10 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.view.View;
 
-import com.example.artsell.MainActivity;
 import com.example.artsell.R;
 import com.example.artsell.adapters.ChatAdapter;
-import com.example.artsell.models.MessageModel;
 import com.example.artsell.databinding.ActivityChatDetailBinding;
+import com.example.artsell.models.MessageModel;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;

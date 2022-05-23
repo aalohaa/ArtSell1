@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.example.artsell.MainActivity;
 import com.example.artsell.R;
 import com.google.firebase.auth.FirebaseAuth;
 

@@ -9,10 +9,9 @@ import android.support.annotation.NonNull;
 import android.view.View;
 import android.widget.Toast;
 
-import com.example.artsell.MainActivity;
 import com.example.artsell.adapters.ChatAdapter;
-import com.example.artsell.models.MessageModel;
 import com.example.artsell.databinding.ActivityGroupChatBinding;
+import com.example.artsell.models.MessageModel;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;

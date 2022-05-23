@@ -1,27 +1,24 @@
-package com.example.artsell.ui.home;
+package com.example.artsell.fragments;
 
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.ScrollView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.artsell.R;
 import com.example.artsell.adapters.HomeAdapter;
-import com.example.artsell.adapters.PopularAdapters;
+import com.example.artsell.adapters.PopularAdapter;
 import com.example.artsell.adapters.RecommendedAdapter;
 import com.example.artsell.adapters.ViewAllAdapter;
 import com.example.artsell.models.HomeCategory;
@@ -48,7 +45,7 @@ public class HomeFragment extends Fragment {
 
     //Popular Items
     List<PopularModel> popularModelList;
-    PopularAdapters popularAdapters;
+    PopularAdapter popularAdapters;
 
     //Search view
     EditText search_box;
@@ -81,7 +78,7 @@ public class HomeFragment extends Fragment {
         //Popular items
         popularRec.setLayoutManager(new LinearLayoutManager(getActivity(), RecyclerView.HORIZONTAL, false));
         popularModelList = new ArrayList<>();
-        popularAdapters = new PopularAdapters(getActivity(),popularModelList);
+        popularAdapters = new PopularAdapter(getActivity(),popularModelList);
         popularRec.setAdapter(popularAdapters);
 
         db.collection("PopularProducts")
