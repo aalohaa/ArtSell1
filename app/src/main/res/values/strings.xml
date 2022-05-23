@@ -18,5 +18,6 @@
     <string name="new_products">New Products</string>
     <string name="my_orders">My Orders</string>
     <string name="my_carts">My Carts</string>
+    <string name="web_client_id">977264080532-i4g13lqcbkuca9huv4r4mvv9gbgttesd.apps.googleusercontent.com</string>
     <string name="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</string>
 </resources>

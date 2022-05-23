@@ -6,12 +6,12 @@
     android:layout_margin="5dp"
     app:cardCornerRadius="7dp"
     app:cardElevation="5dp"
-    android:background="#F0F0F0">
+    android:background="@color/colorPrimary">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#B3FB9F"
+        android:background="#B5C1B2"
         android:padding="8dp"
         android:orientation="vertical">
 
@@ -27,7 +27,7 @@
                 android:layout_weight="1"
                 android:text="Product Name"
                 android:textSize="16sp"
-                android:fontFamily="@font/alice"/>
+                android:fontFamily="@font/lato"/>
 
             <TextView
                 android:id="@+id/product_name"
@@ -37,7 +37,7 @@
                 android:textStyle="bold"
                 android:text="Product Name"
                 android:textSize="16sp"
-                android:fontFamily="@font/alice"/>
+                android:fontFamily="@font/lato"/>
 
         </LinearLayout>
 
@@ -53,7 +53,7 @@
                 android:layout_weight="1"
                 android:text="Product Price"
                 android:textSize="16sp"
-                android:fontFamily="@font/alice"/>
+                android:fontFamily="@font/lato"/>
 
             <TextView
                 android:id="@+id/product_price"
@@ -63,7 +63,7 @@
                 android:textStyle="bold"
                 android:text="Product Price"
                 android:textSize="16sp"
-                android:fontFamily="@font/alice"/>
+                android:fontFamily="@font/lato"/>
 
         </LinearLayout>
 
@@ -79,7 +79,7 @@
                 android:layout_weight="1"
                 android:text="Current Date"
                 android:textSize="16sp"
-                android:fontFamily="@font/alice"/>
+                android:fontFamily="@font/lato"/>
 
             <TextView
                 android:id="@+id/current_date"
@@ -89,7 +89,7 @@
                 android:textStyle="bold"
                 android:text="Current Date"
                 android:textSize="16sp"
-                android:fontFamily="@font/alice"/>
+                android:fontFamily="@font/lato"/>
 
         </LinearLayout>
 
@@ -105,7 +105,7 @@
                 android:layout_weight="1"
                 android:text="Current Time"
                 android:textSize="16sp"
-                android:fontFamily="@font/alice"/>
+                android:fontFamily="@font/lato"/>
 
             <TextView
                 android:id="@+id/current_time"
@@ -115,7 +115,7 @@
                 android:textStyle="bold"
                 android:text="Current Time"
                 android:textSize="16sp"
-                android:fontFamily="@font/alice"/>
+                android:fontFamily="@font/lato"/>
 
         </LinearLayout>
 
@@ -131,7 +131,7 @@
                 android:layout_weight="1"
                 android:text="Total Price"
                 android:textSize="16sp"
-                android:fontFamily="@font/alice"/>
+                android:fontFamily="@font/lato"/>
 
             <TextView
                 android:id="@+id/total_price"
@@ -141,7 +141,7 @@
                 android:textStyle="bold"
                 android:text="Total Price"
                 android:textSize="16sp"
-                android:fontFamily="@font/alice"/>
+                android:fontFamily="@font/lato"/>
 
         </LinearLayout>
 
@@ -157,7 +157,7 @@
                 android:layout_weight="1"
                 android:text="Total Quantity"
                 android:textSize="16sp"
-                android:fontFamily="@font/alice"/>
+                android:fontFamily="@font/lato"/>
 
             <TextView
                 android:id="@+id/total_quantity"
@@ -167,7 +167,7 @@
                 android:textStyle="bold"
                 android:text="Total Quantity"
                 android:textSize="16sp"
-                android:fontFamily="@font/alice"/>
+                android:fontFamily="@font/lato"/>
 
         </LinearLayout>
 

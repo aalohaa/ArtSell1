@@ -1,5 +1,10 @@
 package com.example.artsell.ui.profile;
 
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -8,16 +13,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-
-import com.bumptech.glide.Glide;
+import com.example.artsell.MainActivity;
 import com.example.artsell.R;
-import com.example.artsell.activities.RegistrationActivity;
-import com.example.artsell.models.UserModel;
+import com.example.artsell.activities.LoginActivity;
+import com.example.artsell.databinding.FragmentProfileBinding;
+import com.example.artsell.models.Users;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -27,110 +31,145 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.squareup.picasso.Picasso;
 
-import java.util.Objects;
+import java.util.HashMap;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class ProfileFragment extends Fragment {
 
-    CircleImageView profileImg;
-    EditText name, email, number, address;
-    Button update;
-
-    FirebaseStorage storage;
     FirebaseAuth auth;
-    FirebaseDatabase database;
+    FirebaseDatabase db;
+    FirebaseStorage storage;
 
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
+    TextView profileEmail;
+    EditText txtUsername, etStatus;
+    CircleImageView profileImg;
+    ImageView plus, backArrow;
+    Button saveButton, logoutBtn;
+
+    public ProfileFragment() {
+
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         View root = inflater.inflate(R.layout.fragment_profile, container, false);
 
-        auth = FirebaseAuth.getInstance();
-        database = FirebaseDatabase.getInstance();
         storage = FirebaseStorage.getInstance();
+        auth = FirebaseAuth.getInstance();
+        db = FirebaseDatabase.getInstance();
 
-        profileImg = root.findViewById(R.id.profile_img);
-        name = root.findViewById(R.id.profile_name);
-        email = root.findViewById(R.id.profile_email);
-        number = root.findViewById(R.id.profile_number);
-        address = root.findViewById(R.id.profile_address);
-        update = root.findViewById(R.id.update);
+        profileEmail = root.findViewById(R.id.profile_email);
+        backArrow = root.findViewById(R.id.backArrow);
+        saveButton = root.findViewById(R.id.saveButton);
+        etStatus = root.findViewById(R.id.etStatus);
+        txtUsername = root.findViewById(R.id.txtUsername);
+        logoutBtn = root.findViewById(R.id.logoutBtn);
+        profileImg = root.findViewById(R.id.profileImg);
+        plus = root.findViewById(R.id.plus);
 
-        try {
-            database.getReference().child("Users").child(Objects.requireNonNull(FirebaseAuth.getInstance().getUid()))
-                    .addListenerForSingleValueEvent(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(@NonNull DataSnapshot snapshot) {
-                            UserModel userModel = snapshot.getValue(UserModel.class);
+        backArrow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), MainActivity.class);
+                startActivity(intent);
+            }
+        });
 
-                            Glide.with(getContext()).load(userModel.getProfileImg()).into(profileImg);
-                        }
+        saveButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (!etStatus.getText().toString().equals("") && !txtUsername.getText().toString().equals("")) {
+                    String status = etStatus.getText().toString();
+                    String username = txtUsername.getText().toString();
 
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError error) {
+                    HashMap<String, Object> obj = new HashMap<>();
+                    obj.put("userName", username);
+                    obj.put("status", status);
 
-                        }
-                    }); } catch (Exception e) {
+                    db.getReference().child("Users").child(FirebaseAuth.getInstance().getUid())
+                            .updateChildren(obj);
 
-            Intent intent = new Intent(getActivity(), RegistrationActivity.class);
-            startActivity(intent);
+                    Toast.makeText(getActivity(), "Profile Updated.", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(getActivity(), "Please Enter Username and Status", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
 
-        }
+        db.getReference().child("Users").child(FirebaseAuth.getInstance().getUid())
+                .addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        Users users = snapshot.getValue(Users.class);
+                        Picasso.get()
+                                .load(users.getProfileImg())
+                                .placeholder(R.drawable.profile)
+                                .into(profileImg);
 
-        profileImg.setOnClickListener(new View.OnClickListener() {
+                        etStatus.setText(users.getStatus());
+                        txtUsername.setText(users.getUserName());
+                        profileEmail.setText(users.getMail());
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+        plus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
                 intent.setAction(Intent.ACTION_GET_CONTENT);
                 intent.setType("image/*");
-                startActivityForResult(intent, 33);
+                startActivityForResult(intent, 25);
             }
         });
 
-        update.setOnClickListener(new View.OnClickListener() {
+
+        logoutBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                updateUserProfile();
+                signOut();
+                Intent intent2 = new Intent(getActivity(), LoginActivity.class);
+                startActivity(intent2);
             }
         });
-
         return root;
-    }
-
-    private void updateUserProfile() {
-
     }
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if(data.getData() != null) {
-            Uri profileUri = data.getData();
-            profileImg.setImageURI(profileUri);
-
-            final StorageReference reference = storage.getReference().child("profile_picture")
+        if (data.getData()!=null)
+        {
+            Uri sFile = data.getData();
+            profileImg.setImageURI(sFile);
+            final StorageReference reference = storage.getReference().child("profile_pic")
                     .child(FirebaseAuth.getInstance().getUid());
 
-            reference.putFile(profileUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+            reference.putFile(sFile).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                    Toast.makeText(getContext(), "Uploaded", Toast.LENGTH_SHORT).show();
-
                     reference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                         @Override
                         public void onSuccess(Uri uri) {
-                            database.getReference().child("Users").child(FirebaseAuth.getInstance().getUid())
+                            db.getReference().child("Users").child(FirebaseAuth.getInstance().getUid())
                                     .child("profileImg").setValue(uri.toString());
-                            Toast.makeText(getContext(), "Profile Picture Uploaded", Toast.LENGTH_SHORT).show();
-
                         }
                     });
                 }
             });
-
         }
     }
+
+    public void signOut() {
+        auth.signOut();
+    }
+
 }

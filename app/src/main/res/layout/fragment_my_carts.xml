@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".MyCartsFragment"
-    android:background="#F0F0F0">
+    android:background="@color/colorPrimary">
 
     <!-- TODO: Update blank fragment layout -->
 
@@ -39,7 +39,7 @@
             android:textAlignment="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/alice"
+            android:fontFamily="@font/lato"
             android:text="Your Cart Is Empty"
             android:textSize="22sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -59,7 +59,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/black"
-            android:fontFamily="@font/alice"
+            android:fontFamily="@font/lato"
             android:padding="10dp"
             android:text="Total Price: 0$"
             android:textAlignment="center"

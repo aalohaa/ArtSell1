@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activities.LoginActivity"
-    android:background="#F0F0F0">
+    android:background="@color/colorPrimary">
 
     <ImageView
         android:id="@+id/reg_img"
@@ -26,7 +26,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="16dp"
-        android:fontFamily="@font/alice"
+        android:fontFamily="@font/philosopher"
         android:gravity="center_horizontal|center_vertical"
         android:text="Share an inner beauty"
         android:textColor="@color/black"
@@ -38,7 +38,7 @@
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/email_login"
+        android:id="@+id/logEmail"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
@@ -56,7 +56,7 @@
         app:layout_constraintWidth_percent=".85" />
 
     <EditText
-        android:id="@+id/password_login"
+        android:id="@+id/logPassword"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
@@ -71,11 +71,11 @@
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/email_login"
+        app:layout_constraintTop_toBottomOf="@+id/logEmail"
         app:layout_constraintWidth_percent=".85" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/login_btn"
+        android:id="@+id/logBtn"
         android:layout_width="match_parent"
         android:layout_marginLeft="120dp"
         android:layout_marginRight="120dp"
@@ -89,10 +89,27 @@
         android:background="@drawable/ic_login_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password_login" />
+        app:layout_constraintTop_toBottomOf="@+id/logPassword" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnGoogle"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="160dp"
+        android:layout_marginRight="160dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:padding="14dp"
+        android:text="Google"
+        android:textAllCaps="false"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:background="@drawable/ic_login_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logBtn" />
 
     <TextView
-        android:id="@+id/text_forgotpass"
+        android:id="@+id/forgotPass"
         android:layout_width="0dp"
         android:layout_height="30dp"
         android:layout_marginStart="30dp"
@@ -103,11 +120,11 @@
         android:textAlignment="gravity"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login_btn"
+        app:layout_constraintTop_toBottomOf="@+id/logBtn"
         app:layout_constraintVertical_bias="0.167" />
 
     <TextView
-        android:id="@+id/text_register"
+        android:id="@+id/goReg"
         android:layout_width="0dp"
         android:layout_height="30dp"
         android:layout_marginEnd="30dp"
@@ -118,7 +135,7 @@
         android:textSize="17sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login_btn"
+        app:layout_constraintTop_toBottomOf="@+id/logBtn"
         app:layout_constraintVertical_bias="0.167" />
 
     <ProgressBar
@@ -131,7 +148,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_forgotpass"
+        app:layout_constraintTop_toBottomOf="@+id/forgotPass"
         app:layout_constraintVertical_bias="0.423" />
 
 

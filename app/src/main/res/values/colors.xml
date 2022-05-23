@@ -8,9 +8,20 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="simpleWhite">#FFF</color>
-    <color name="colorBlack">#121111</color>
-    <color name="colorGrey">#676060</color>
-    <color name="colorPrimaryDark">#FAC110</color>
+    <color name="our_black">#242222</color>
+    <color name="grey">#898888</color>
+    <color name="colorPrimaryDark">#121111</color>
     <color name="colorAccent">#03DAC5</color>
-    <color name="colorPrimary">#FAC110</color>
+    <color name="colorPrimary">#F0F0F0</color>
+    <color name="whatsAppColor">#0b6156</color>
+    <color name="Red" >#9F0B0B</color>
+
+    <color name="fb_color">#3c5793</color>
+    <color name="sa_green">#1E9618</color>
+    <color name="sa_green_transparent">#801E9618</color>
+    <color name="sa_green_dark">#146310</color>
+    <color name="lightgreen">#e5ffcc</color>
+
+    <color name="settingsIconColor">#0E8374</color>
+    <color name="grayBackground">#BCBCBC</color>
 </resources>

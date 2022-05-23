@@ -8,7 +8,7 @@
     android:layout_marginTop="10dp"
     app:cardCornerRadius="5dp"
     app:cardElevation="4dp"
-    android:background="#F0F0F0">
+    android:background="@color/colorPrimary">
 
     <LinearLayout
         android:background="#FFFFFF"
@@ -54,7 +54,7 @@
                 android:maxLines="2"
                 android:singleLine="false"
                 android:textSize="18sp"
-                android:textColor="@color/colorGrey"/>
+                android:textColor="@color/grey"/>
 
             <TextView
                 android:fontFamily="@font/lato"

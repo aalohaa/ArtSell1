@@ -3,16 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    xmlns:fab="http://schemas.android.com/tools"
     android:layout_height="match_parent"
-    xmlns:fab="http://schemas.android.com/apk/res-auto"
     tools:context=".MainActivity"
+    android:background="@color/colorPrimary"
     >
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginBottom="0dp"
         android:id="@+id/drawer_layout"
-        android:background="#F0F0F0"
         tools:context=".MainActivity">
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -21,7 +22,7 @@
             android:layout_height="71dp"
             android:layout_alignParentBottom="true"
             android:background="@drawable/rounded_corner"
-            android:elevation="2dp"
+            android:elevation="0dp"
             app:itemIconSize="36dp"
             app:itemIconTint="@drawable/item_selector"
             app:itemRippleColor="@android:color/transparent"
@@ -42,88 +43,107 @@
 
         </FrameLayout>
     </RelativeLayout>
-
-    <com.github.clans.fab.FloatingActionMenu
+    <ImageButton
         android:id="@+id/fabMenu"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingRight="25dp"
-        android:paddingBottom="0dp"
-        fab:menu_animationDelayPerItem="55"
-        fab:menu_buttonSpacing="0dp"
-        fab:menu_colorNormal="@color/white"
-        fab:menu_colorPressed="#696969"
-        fab:menu_fab_size="normal"
-        fab:menu_icon="@drawable/fab_add_custom"
-        fab:menu_labels_colorNormal="#333"
-        fab:menu_labels_colorPressed="#444"
-        fab:menu_labels_colorRipple="#66efecec"
-        fab:menu_labels_cornerRadius="3dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/plus1"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="38dp"
+        android:layout_marginBottom="5dp"
+        android:elevation="0dp"
+        android:scaleX="2"
+        android:scaleY="2"
+        android:contentDescription="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="MissingConstraints" />
 
-        fab:menu_labels_hideAnimation="@anim/fab_slide_out_to_right"
-        fab:menu_labels_margin="0dp"
-        fab:menu_labels_maxLines="-1"
-        fab:menu_labels_padding="8dp"
-        fab:menu_labels_position="left"
-        fab:menu_labels_showAnimation="@anim/fab_slide_in_from_right"
-        fab:menu_labels_singleLine="false"
-        fab:menu_labels_textColor="#f2f1f1"
-        fab:menu_labels_textSize="15dp"
-        fab:menu_openDirection="up">
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/nav_profile"
+        android:backgroundTint="@color/colorPrimary"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:fabSize="normal"
+        android:scaleType="center"
+        app:fabCustomSize="60dp"
+        android:layout_marginEnd="38dp"
+        android:layout_marginBottom="16dp"
+        android:elevation="0dp"
+        android:src="@drawable/profile"
+        android:visibility="invisible"
+        app:elevation="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/fabMenu"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="MissingConstraints" />
 
-        <com.github.clans.fab.FloatingActionButton
-            android:id="@+id/nav_profile"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:fab_colorNormal="@color/white"
-            app:fab_colorPressed="#696969"
-            app:fab_label="Profile"
-            app:fab_size="mini"
-            android:src="@drawable/menu_person"/>
-        <com.github.clans.fab.FloatingActionButton
-            android:id="@+id/nav_category"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:fab_colorNormal="@color/white"
-            app:fab_colorPressed="#696969"
-            app:fab_label="Category"
-            app:fab_size="mini"
-            android:src="@drawable/ic_baseline_category_24"/>
-        <com.github.clans.fab.FloatingActionButton
-            android:id="@+id/nav_offers"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:fab_colorNormal="@color/white"
-            app:fab_colorPressed="#696969"
-            app:fab_label="Offers"
-            app:fab_size="mini"
-            android:src="@drawable/ic_baseline_local_offer_24"/>
-        <com.github.clans.fab.FloatingActionButton
-            android:id="@+id/nav_new_products"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:fab_colorNormal="@color/white"
-            app:fab_colorPressed="#696969"
-            app:fab_label="New Products"
-            app:fab_size="mini"
-            android:src="@drawable/autorenew"/>
-        <com.github.clans.fab.FloatingActionButton
-            android:id="@+id/nav_my_carts"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:fab_colorNormal="@color/white"
-            app:fab_colorPressed="#696969"
-            app:fab_label="My Carts"
-            app:fab_size="mini"
-            android:src="@drawable/mycart"/>
-        <com.github.clans.fab.FloatingActionButton
-            android:id="@+id/show_login"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:fab_colorNormal="@color/white"
-            app:fab_colorPressed="#696969"
-            app:fab_label="Log In"
-            app:fab_size="mini"
-            android:src="@drawable/ic_login"/>
-    </com.github.clans.fab.FloatingActionMenu>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/nav_category"
+        android:backgroundTint="@color/colorPrimary"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:scaleType="center"
+        app:fabCustomSize="60dp"
+        android:layout_marginEnd="38dp"
+        android:layout_marginBottom="16dp"
+        android:elevation="0dp"
+        android:src="@drawable/ic_baseline_category_24"
+        android:visibility="invisible"
+        app:elevation="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/nav_profile"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/nav_offers"
+        android:backgroundTint="@color/colorPrimary"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:scaleType="center"
+        app:fabCustomSize="60dp"
+        android:layout_marginEnd="38dp"
+        android:layout_marginBottom="16dp"
+        android:elevation="0dp"
+        android:src="@drawable/ic_baseline_local_offer_24"
+        android:visibility="invisible"
+        app:elevation="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/nav_category"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/nav_new_products"
+        android:backgroundTint="@color/colorPrimary"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:scaleType="center"
+        app:fabCustomSize="60dp"
+        android:layout_marginEnd="38dp"
+        android:layout_marginBottom="16dp"
+        android:elevation="0dp"
+        android:src="@drawable/ic_facebook"
+        android:visibility="invisible"
+        app:elevation="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/nav_offers"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/nav_my_carts"
+        android:backgroundTint="@color/colorPrimary"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:scaleType="center"
+        app:fabCustomSize="60dp"
+        android:layout_marginEnd="38dp"
+        android:layout_marginBottom="16dp"
+        android:elevation="0dp"
+        android:src="@drawable/ic_baseline_shopping_cart_24"
+        android:visibility="invisible"
+        app:elevation="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/nav_new_products"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="MissingConstraints" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

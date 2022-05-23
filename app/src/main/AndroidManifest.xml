@@ -14,6 +14,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ArtSell">
         <activity
+            android:name=".GoogleSingInActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.SettingsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.GroupChatActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.ChatDetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".activities.ForgotPasswordActivity"
             android:exported="false" />
         <activity
@@ -31,7 +43,7 @@
         <activity
             android:name=".welcome.SplashScreen"
             android:exported="true"
-            android:theme="@style/SplashTheme"></activity>
+            android:theme="@style/SplashTheme" />
         <activity
             android:name=".activities.PlacedOrderActivity"
             android:exported="false" />
@@ -52,6 +64,9 @@
             android:exported="true" />
         <activity
             android:name=".activities.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.GoogleSignInActivity"
             android:exported="false" />
 
         <meta-data

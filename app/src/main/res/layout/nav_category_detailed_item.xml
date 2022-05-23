@@ -25,7 +25,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:fontFamily="@font/alice"
+                android:fontFamily="@font/lato"
                 android:id="@+id/nav_cat_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -42,7 +42,7 @@
                 android:id="@+id/price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/alice"
+                android:fontFamily="@font/lato"
                 android:text="Product price"
                 android:textColor="@color/black"
                 android:textSize="22sp"
