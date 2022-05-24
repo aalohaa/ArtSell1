@@ -124,6 +124,7 @@ public class MainActivity extends AppCompatActivity {
         binding.bottomNavigationView.setOnItemSelectedListener(item -> {
             switch (item.getItemId()) {
                 case R.id.nav_home:
+
                     replaceFragment(new HomeFragment());
                     break;
                 case R.id.nav_my_orders:
@@ -196,4 +197,6 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(MainActivity.this, MainActivity.class);
         startActivity(intent);
     }
+
+
 }

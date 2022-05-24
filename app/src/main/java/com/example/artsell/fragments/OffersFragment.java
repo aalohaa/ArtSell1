@@ -13,7 +13,6 @@ import com.example.artsell.R;
 
 public class OffersFragment extends Fragment {
 
-
     public OffersFragment() {
         // Required empty public constructor
     }

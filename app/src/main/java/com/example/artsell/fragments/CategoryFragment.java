@@ -26,6 +26,10 @@ import java.util.List;
 
 public class CategoryFragment extends Fragment {
 
+    public CategoryFragment() {
+
+    }
+
     FirebaseFirestore db;
     RecyclerView recyclerView;
     List<NavCategoryModel> categoryModelList;

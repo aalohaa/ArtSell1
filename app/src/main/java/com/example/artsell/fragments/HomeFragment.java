@@ -37,6 +37,10 @@ import java.util.List;
 
 public class HomeFragment extends Fragment {
 
+    public HomeFragment() {
+
+    }
+
     ScrollView scrollView;
     ProgressBar progressBar;
 

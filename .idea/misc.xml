@@ -11,6 +11,7 @@
         <entry key="..\:/Users/talga/StudioProjects/ArtSell1/app/src/main/res/drawable/add_circle.xml" value="0.142" />
         <entry key="..\:/Users/talga/StudioProjects/ArtSell1/app/src/main/res/drawable/animated_minus.xml" value="0.1" />
         <entry key="..\:/Users/talga/StudioProjects/ArtSell1/app/src/main/res/drawable/animated_plus.xml" value="0.1525" />
+        <entry key="..\:/Users/talga/StudioProjects/ArtSell1/app/src/main/res/drawable/arrow.xml" value="0.1" />
         <entry key="..\:/Users/talga/StudioProjects/ArtSell1/app/src/main/res/drawable/autorenew.xml" value="0.1595" />
         <entry key="..\:/Users/talga/StudioProjects/ArtSell1/app/src/main/res/drawable/avd_drawer_close.xml" value="0.1" />
         <entry key="..\:/Users/talga/StudioProjects/ArtSell1/app/src/main/res/drawable/avd_drawer_open.xml" value="0.1" />
@@ -35,6 +36,7 @@
         <entry key="..\:/Users/talga/StudioProjects/ArtSell1/app/src/main/res/drawable/ic_drawer.xml" value="0.1" />
         <entry key="..\:/Users/talga/StudioProjects/ArtSell1/app/src/main/res/drawable/ic_drawer_closed.xml" value="0.1" />
         <entry key="..\:/Users/talga/StudioProjects/ArtSell1/app/src/main/res/drawable/ic_left_arrow.xml" value="0.1" />
+        <entry key="..\:/Users/talga/StudioProjects/ArtSell1/app/src/main/res/drawable/ic_linear_backgroud_price.xml" value="0.1905" />
         <entry key="..\:/Users/talga/StudioProjects/ArtSell1/app/src/main/res/drawable/ic_login.xml" value="0.232" />
         <entry key="..\:/Users/talga/StudioProjects/ArtSell1/app/src/main/res/drawable/ic_login_btn.xml" value="0.3435" />
         <entry key="..\:/Users/talga/StudioProjects/ArtSell1/app/src/main/res/drawable/ic_login_field.xml" value="0.3435" />
@@ -60,11 +62,14 @@
         <entry key="..\:/Users/talga/StudioProjects/ArtSell1/app/src/main/res/drawable/points_3.xml" value="0.3435" />
         <entry key="..\:/Users/talga/StudioProjects/ArtSell1/app/src/main/res/drawable/points_4.xml" value="0.3435" />
         <entry key="..\:/Users/talga/StudioProjects/ArtSell1/app/src/main/res/drawable/pop_heart.xml" value="0.1305" />
+        <entry key="..\:/Users/talga/StudioProjects/ArtSell1/app/src/main/res/drawable/ratingbar.xml" value="0.1" />
         <entry key="..\:/Users/talga/StudioProjects/ArtSell1/app/src/main/res/drawable/remove_circle.xml" value="0.142" />
         <entry key="..\:/Users/talga/StudioProjects/ArtSell1/app/src/main/res/drawable/rounded_corner.xml" value="0.3435" />
         <entry key="..\:/Users/talga/StudioProjects/ArtSell1/app/src/main/res/drawable/search_gb.xml" value="0.1025" />
         <entry key="..\:/Users/talga/StudioProjects/ArtSell1/app/src/main/res/drawable/splashscreen.xml" value="0.1" />
+        <entry key="..\:/Users/talga/StudioProjects/ArtSell1/app/src/main/res/drawable/testest.xml" value="0.1" />
         <entry key="..\:/Users/talga/StudioProjects/ArtSell1/app/src/main/res/drawable/unselected.xml" value="0.1" />
+        <entry key="..\:/Users/talga/StudioProjects/ArtSell1/app/src/main/res/font/aclonica.xml" value="0.1287037037037037" />
         <entry key="..\:/Users/talga/StudioProjects/ArtSell1/app/src/main/res/layout/activity_chat_detail.xml" value="0.25" />
         <entry key="..\:/Users/talga/StudioProjects/ArtSell1/app/src/main/res/layout/activity_detailed.xml" value="0.33" />
         <entry key="..\:/Users/talga/StudioProjects/ArtSell1/app/src/main/res/layout/activity_forgot_password.xml" value="0.25" />
@@ -97,13 +102,13 @@
         <entry key="..\:/Users/talga/StudioProjects/ArtSell1/app/src/main/res/layout/nav_cat_item.xml" value="0.3388888888888889" />
         <entry key="..\:/Users/talga/StudioProjects/ArtSell1/app/src/main/res/layout/nav_category_detailed_item.xml" value="0.3078125" />
         <entry key="..\:/Users/talga/StudioProjects/ArtSell1/app/src/main/res/layout/nav_header_main.xml" value="0.35104166666666664" />
-        <entry key="..\:/Users/talga/StudioProjects/ArtSell1/app/src/main/res/layout/popular_item.xml" value="0.67" />
+        <entry key="..\:/Users/talga/StudioProjects/ArtSell1/app/src/main/res/layout/popular_item.xml" value="0.33" />
         <entry key="..\:/Users/talga/StudioProjects/ArtSell1/app/src/main/res/layout/recommended_item.xml" value="0.3388888888888889" />
         <entry key="..\:/Users/talga/StudioProjects/ArtSell1/app/src/main/res/layout/sample_receiver.xml" value="0.45806451612903226" />
         <entry key="..\:/Users/talga/StudioProjects/ArtSell1/app/src/main/res/layout/sample_sender.xml" value="0.9" />
         <entry key="..\:/Users/talga/StudioProjects/ArtSell1/app/src/main/res/layout/sample_show_user.xml" value="0.33" />
         <entry key="..\:/Users/talga/StudioProjects/ArtSell1/app/src/main/res/layout/slide_screen.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/talga/StudioProjects/ArtSell1/app/src/main/res/layout/view_all_item.xml" value="0.33" />
+        <entry key="..\:/Users/talga/StudioProjects/ArtSell1/app/src/main/res/layout/view_all_item.xml" value="0.25" />
         <entry key="..\:/Users/talga/StudioProjects/ArtSell1/app/src/main/res/menu/bottom_navmenu.xml" value="0.35104166666666664" />
         <entry key="..\:/Users/talga/StudioProjects/ArtSell1/app/src/main/res/menu/main.xml" value="0.33697916666666666" />
       </map>

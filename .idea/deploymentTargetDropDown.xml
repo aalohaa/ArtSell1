@@ -7,12 +7,12 @@
         <deviceKey>
           <Key>
             <type value="VIRTUAL_DEVICE_PATH" />
-            <value value="C:\Users\talga\.android\avd\Second.avd" />
+            <value value="C:\Users\talga\.android\avd\First.avd" />
           </Key>
         </deviceKey>
       </Target>
     </targetSelectedWithDropDown>
-    <timeTargetWasSelectedWithDropDown value="2022-05-23T13:26:12.624602600Z" />
+    <timeTargetWasSelectedWithDropDown value="2022-05-24T10:02:34.004878400Z" />
     <runningDeviceTargetsSelectedWithDialog>
       <Target>
         <type value="RUNNING_DEVICE_TARGET" />

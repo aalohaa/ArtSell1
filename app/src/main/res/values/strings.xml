@@ -12,6 +12,7 @@
     <string name="menu_slideshow">Slideshow</string>
     <string name="profile">Profile</string>
     <string name="category">Category</string>
+    <string name="fragment_chat">Chat</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="offers">Offers</string>

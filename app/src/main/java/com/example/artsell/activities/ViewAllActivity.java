@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.hardware.lights.LightState;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 
 import com.example.artsell.R;
