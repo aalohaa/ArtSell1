@@ -26,14 +26,12 @@ import java.util.HashMap;
 
 public class DetailedActivity extends AppCompatActivity {
 
-    TextView quantity;
+    int quantity;
     int totalQuantity = 1;
     int totalPrice = 0;
     ImageView detailedImg;
-    TextView price, rating, description;
+    TextView price, rating, description, name;
     Button addToCart;
-    ImageView addItem, removeItem;
-    Toolbar toolbar;
 
     FirebaseFirestore firestore;
     FirebaseAuth auth;
@@ -45,10 +43,6 @@ public class DetailedActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detailed);
 
-        toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
         firestore = FirebaseFirestore.getInstance();
         auth = FirebaseAuth.getInstance();
 
@@ -57,21 +51,19 @@ public class DetailedActivity extends AppCompatActivity {
             viewAllModel = (ViewAllModel) object;
         }
 
-        quantity = findViewById(R.id.quantity);
+        quantity = 1;
+        name = findViewById(R.id.detailed_name);
         detailedImg = findViewById(R.id.detailed_img);
-        addItem = findViewById(R.id.add_item);
-        removeItem = findViewById(R.id.remove_item);
-
         price = findViewById(R.id.detailed_price);
         rating = findViewById(R.id.detailed_rating);
         description = findViewById(R.id.detailed_dec);
 
         if (viewAllModel != null) {
             Glide.with(getApplicationContext()).load(viewAllModel.getImg_url()).into(detailedImg);
+            name.setText(viewAllModel.getName());
             rating.setText(viewAllModel.getRating());
             description.setText(viewAllModel.getDescription());
-            price.setText("Price: $" + viewAllModel.getPrice());
-
+            price.setText(viewAllModel.getPrice() + " tg");
 
             totalPrice = viewAllModel.getPrice() * totalQuantity;
 
@@ -85,30 +77,7 @@ public class DetailedActivity extends AppCompatActivity {
                 addedToCart();
             }
         });
-        addItem.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-                if (totalQuantity < 10) {
-                    totalQuantity++;
-                    quantity.setText(String.valueOf(totalQuantity));
-                    totalPrice = viewAllModel.getPrice() * totalQuantity;
-                }
-
-            }
-        });
-        removeItem.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                if (totalQuantity > 1) {
-                    totalQuantity--;
-                    quantity.setText(String.valueOf(totalQuantity));
-                    totalPrice = viewAllModel.getPrice() * totalQuantity;
-                }
-
-            }
-        });
     }
 
     private void addedToCart() {
@@ -128,7 +97,7 @@ public class DetailedActivity extends AppCompatActivity {
         cartMap.put("productPrice", price.getText().toString());
         cartMap.put("currentDate", saveCurrentDate);
         cartMap.put("currentTime", saveCurrentTime);
-        cartMap.put("totalQuantity", quantity.getText().toString());
+        cartMap.put("totalQuantity", quantity);
         cartMap.put("totalPrice", totalPrice);
 
         firestore.collection("AddToCart").document(auth.getCurrentUser().getUid())
