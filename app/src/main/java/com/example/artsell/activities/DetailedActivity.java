@@ -7,6 +7,7 @@ import androidx.appcompat.widget.Toolbar;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -32,10 +33,9 @@ public class DetailedActivity extends AppCompatActivity {
     ImageView detailedImg;
     TextView price, rating, description, name;
     Button addToCart;
-
+    ImageButton btnBack, btnCart;
     FirebaseFirestore firestore;
     FirebaseAuth auth;
-
     ViewAllModel viewAllModel = null;
 
     @Override
@@ -78,8 +78,20 @@ public class DetailedActivity extends AppCompatActivity {
             }
         });
 
+        btnBack = findViewById(R.id.go_back);
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
     }
 
+    @Override
+    public void onBackPressed()
+    {
+        super.onBackPressed();
+    }
     private void addedToCart() {
         String saveCurrentDate, saveCurrentTime;
         Calendar calForDate = Calendar.getInstance();

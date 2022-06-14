@@ -14,7 +14,7 @@ import androidx.viewpager.widget.PagerAdapter;
 
 import com.example.artsell.activities.MainActivity;
 import com.example.artsell.R;
-import com.example.artsell.activities.SlideActivity;
+import com.example.artsell.activities.WelcomeActivity;
 
 public class SlideViewPagerAdapter extends PagerAdapter {
 
@@ -66,14 +66,14 @@ public class SlideViewPagerAdapter extends PagerAdapter {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SlideActivity.viewPager.setCurrentItem(position+1);
+                WelcomeActivity.viewPager.setCurrentItem(position+1);
             }
         });
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SlideActivity.viewPager.setCurrentItem(position-1);
+                WelcomeActivity.viewPager.setCurrentItem(position-1);
             }
         });
 

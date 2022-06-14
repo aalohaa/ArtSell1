@@ -1,151 +1,186 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<ScrollView
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".activities.DetailedActivity"
     android:background="@color/colorPrimary"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fillViewport="true">
+    android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_margin="30dp">
-
-
-
-    <ImageView
-        android:id="@+id/detailed_img"
-        android:layout_width="350dp"
-        android:layout_height="350dp"
-        android:maxWidth="350dp"
-        android:maxHeight="350dp"
-        android:minWidth="280dp"
-        android:minHeight="280dp"
-        android:scaleType="centerCrop"
-        android:background="@drawable/ic_login_btn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="100dp"
-        android:layout_height="6dp"
-        android:layout_marginTop="-5.5dp"
-        android:elevation="2dp"
-        android:background="@drawable/ic_view_item_bar_current"
-        android:contentDescription="current"
-        app:layout_constraintTop_toBottomOf="@+id/view_item_bar"
-        tools:layout_editor_absoluteX="0dp"
-        tools:ignore="MissingConstraints" />
-
-    <ImageView
-        android:id="@+id/view_item_bar"
+        android:id="@+id/top_navbar"
         android:layout_width="match_parent"
-        android:layout_height="4dp"
-        android:layout_marginTop="25dp"
-        android:background="@drawable/ic_view_item_bar"
-        android:contentDescription="totalbar"
-        android:elevation="1dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/detailed_img" />
+        android:layout_height="70dp">
 
+        <ImageButton
+            android:id="@+id/go_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:background="@drawable/ic_left_arrow"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/detailed_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:lines="1"
-        android:fontFamily="@font/lato_bold"
-        android:text="Item name."
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        android:gravity="left"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/view_item_bar" />
-
-    <TextView
-        android:id="@+id/detailed_price"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/lato"
-        android:lines="1"
-        android:textSize="22sp"
-        android:textColor="@color/our_black"
-        android:layout_marginTop="4dp"
-        android:gravity="left"
-        android:text="200 tg"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/detailed_name" />
-
-
-    <ImageView
-        android:id="@+id/view_ratingbar"
-        android:layout_width="120dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:src="@drawable/ratingbar"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/detailed_price" />
-
-    <TextView
-        android:id="@+id/detailed_rating"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/lato_bold"
-        android:padding="2dp"
-        android:layout_marginTop="4dp"
-        android:text="(58)"
-        android:textColor="@color/our_black"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/view_ratingbar"
-        app:layout_constraintTop_toBottomOf="@+id/detailed_price" />
-
-    <ImageView
-        android:id="@+id/pause"
-        android:layout_width="match_parent"
-        android:layout_height="1.5dp"
-        android:layout_marginTop="15dp"
-        android:background="@drawable/ic_view_item_bar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view_ratingbar" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/add_to_cart"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/ic_btn_gradient_2"
-        android:fontFamily="@font/lato_bold"
-        android:text="Add to cart"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:textSize="24sp"
-        app:layout_constraintTop_toBottomOf="@+id/pause"
-        tools:layout_editor_absoluteX="0dp" />
-
-    <TextView
-        android:id="@+id/detailed_dec"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/description"
-        android:layout_marginTop="20dp"
-        android:gravity="left"
-        android:textSize="20sp"
-        android:fontFamily="@font/lato"
-
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/add_to_cart" />
+        <ImageButton
+            android:id="@+id/cart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="40dp"
+            android:background="@drawable/ic_baseline_shopping_cart_24"
+            android:contentDescription="TODO"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/top_navbar"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_margin="30dp">
+
+
+
+        <ImageView
+            android:id="@+id/detailed_img"
+            android:layout_width="350dp"
+            android:layout_height="350dp"
+            android:maxWidth="350dp"
+            android:maxHeight="350dp"
+            android:minWidth="280dp"
+            android:minHeight="280dp"
+            android:scaleType="centerCrop"
+            android:background="@drawable/ic_login_btn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="100dp"
+            android:layout_height="6dp"
+            android:layout_marginTop="-5.5dp"
+            android:elevation="2dp"
+            android:background="@drawable/ic_view_item_bar_current"
+            android:contentDescription="current"
+            app:layout_constraintTop_toBottomOf="@+id/view_item_bar"
+            tools:layout_editor_absoluteX="0dp"
+            tools:ignore="MissingConstraints" />
+
+        <ImageView
+            android:id="@+id/view_item_bar"
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/ic_view_item_bar"
+            android:contentDescription="totalbar"
+            android:elevation="1dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/detailed_img" />
+
+
+        <TextView
+            android:id="@+id/detailed_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:lines="1"
+            android:fontFamily="@font/lato_bold"
+            android:text="Item name."
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:gravity="left"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view_item_bar" />
+
+        <TextView
+            android:id="@+id/detailed_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/lato"
+            android:lines="1"
+            android:textSize="22sp"
+            android:textColor="@color/our_black"
+            android:layout_marginTop="4dp"
+            android:gravity="left"
+            android:text="200 tg"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/detailed_name" />
+
+
+        <ImageView
+            android:id="@+id/view_ratingbar"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:src="@drawable/ratingbar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/detailed_price" />
+
+        <TextView
+            android:id="@+id/detailed_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/lato_bold"
+            android:padding="2dp"
+            android:layout_marginTop="4dp"
+            android:text="(58)"
+            android:textColor="@color/our_black"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/view_ratingbar"
+            app:layout_constraintTop_toBottomOf="@+id/detailed_price" />
+
+        <ImageView
+            android:id="@+id/pause"
+            android:layout_width="match_parent"
+            android:layout_height="1.5dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/ic_view_item_bar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view_ratingbar" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/add_to_cart"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/ic_btn_gradient_2"
+            android:fontFamily="@font/lato_bold"
+            android:text="Add to cart"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:layout_constraintTop_toBottomOf="@+id/pause"
+            tools:layout_editor_absoluteX="0dp" />
+
+        <TextView
+            android:id="@+id/detailed_dec"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/description"
+            android:layout_marginTop="20dp"
+            android:gravity="left"
+            android:textSize="20sp"
+            android:fontFamily="@font/lato"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/add_to_cart" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</RelativeLayout>

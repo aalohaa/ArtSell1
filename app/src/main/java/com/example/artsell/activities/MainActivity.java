@@ -9,6 +9,8 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageButton;
 import android.widget.Toast;
+
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -16,27 +18,25 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.example.artsell.R;
+
 import com.example.artsell.databinding.ActivityMainBinding;
-import com.example.artsell.fragments.CategoryFragment;
 import com.example.artsell.fragments.ChatsFragment;
 import com.example.artsell.fragments.HomeFragment;
 import com.example.artsell.fragments.MyCartsFragment;
-import com.example.artsell.fragments.OffersFragment;
+import com.example.artsell.fragments.OrderFragment;
 import com.example.artsell.fragments.ProfileFragment;
-import com.example.artsell.fragments.MyOrdersFragment;
-import com.example.artsell.fragments.NewProductsFragment;
+import com.example.artsell.fragments.MarketFragment;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
-
 
 
 public class MainActivity extends AppCompatActivity {
 
     FirebaseAuth auth;
-    ImageButton fabMenu;
     ActivityMainBinding binding;
     Animation fabOpen, fabClose;
-    FloatingActionButton fabProfile, fabCategory, fabOffers, fabNewProducts,fabMyCarts;
+    FloatingActionButton fabProfile, fabMyCarts, fabAsk;
+    AppCompatButton btnMarket, btnOrder;
 
     boolean isOpen = false;
 
@@ -56,14 +56,31 @@ public class MainActivity extends AppCompatActivity {
 
         final ImageButton fabMenu = findViewById(R.id.fabMenu);
 
+        btnMarket = findViewById(R.id.btn_market);
+        btnOrder = findViewById(R.id.btn_order);
+
         fabOpen = AnimationUtils.loadAnimation(this, R.anim.fab_open);
         fabClose = AnimationUtils.loadAnimation(this, R.anim.fab_close);
 
         fabProfile = findViewById(R.id.nav_profile);
-        fabCategory = findViewById(R.id.nav_category);
-        fabOffers = findViewById(R.id.nav_offers);
-        fabNewProducts = findViewById(R.id.nav_new_products);
         fabMyCarts = findViewById(R.id.nav_my_carts);
+        fabAsk = findViewById(R.id.nav_ask);
+
+        btnMarket.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                replaceFragment(new MarketFragment());
+
+            }
+        });
+
+        btnOrder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                replaceFragment(new OrderFragment());
+
+            }
+        });
 
         fabMenu.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -90,28 +107,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-        fabCategory.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View View) {
 
-                replaceFragment(new CategoryFragment());
-                animateFab();
-            }
-        });
-        fabOffers.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View View) {
-                replaceFragment(new OffersFragment());
-                animateFab();
-            }
-        });
-        fabNewProducts.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View View) {
-                replaceFragment(new NewProductsFragment());
-                animateFab();
-            }
-        });
         fabMyCarts.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View View) {
@@ -124,26 +120,32 @@ public class MainActivity extends AppCompatActivity {
         binding.bottomNavigationView.setOnItemSelectedListener(item -> {
             switch (item.getItemId()) {
                 case R.id.nav_home:
+                    binding.btns.setVisibility(View.GONE);
 
                     replaceFragment(new HomeFragment());
                     break;
-                case R.id.nav_my_orders:
+                case R.id.nav_market:
                     if (auth.getCurrentUser() == null) {
                         startActivity(new Intent(MainActivity.this, LoginActivity.class));
                     } else {
-                    replaceFragment(new MyOrdersFragment());
+                        binding.btns.setVisibility(View.VISIBLE);
+                        replaceFragment(new MarketFragment());
+
                     }
                     break;
                 case R.id.scene_chat:
+                    binding.btns.setVisibility(View.GONE);
                     if (auth.getCurrentUser() == null) {
                         startActivity(new Intent(MainActivity.this, LoginActivity.class));
                     } else {
-                    replaceFragment(new ChatsFragment());
+                        replaceFragment(new ChatsFragment());
                     }
                     break;
                 case R.id.scene_btn:
+                    binding.btns.setVisibility(View.GONE);
                     break;
                 default:
+                    binding.btns.setVisibility(View.GONE);
                     return true;
             }
             return true;
@@ -154,29 +156,21 @@ public class MainActivity extends AppCompatActivity {
 
         if (isOpen){
             fabProfile.startAnimation(fabClose);
-            fabCategory.startAnimation(fabClose);
-            fabOffers.startAnimation(fabClose);
-            fabNewProducts.startAnimation(fabClose);
             fabMyCarts.startAnimation(fabClose);
+            fabAsk.startAnimation(fabClose);
 
             fabProfile.setClickable(false);
-            fabCategory.setClickable(false);
-            fabOffers.setClickable(false);
-            fabNewProducts.setClickable(false);
             fabMyCarts.setClickable(false);
+            fabAsk.setClickable(false);
             isOpen=false;
         } else {
             fabProfile.startAnimation(fabOpen);
-            fabCategory.startAnimation(fabOpen);
-            fabOffers.startAnimation(fabOpen);
-            fabNewProducts.startAnimation(fabOpen);
             fabMyCarts.startAnimation(fabOpen);
+            fabAsk.startAnimation(fabOpen);
 
             fabProfile.setClickable(true);
-            fabCategory.setClickable(true);
-            fabOffers.setClickable(true);
-            fabNewProducts.setClickable(true);
             fabMyCarts.setClickable(true);
+            fabAsk.setClickable(true);
             isOpen=true;
         }
     }
@@ -197,6 +191,5 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(MainActivity.this, MainActivity.class);
         startActivity(intent);
     }
-
 
 }

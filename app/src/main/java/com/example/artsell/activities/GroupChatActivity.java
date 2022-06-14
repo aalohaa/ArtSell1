@@ -31,7 +31,7 @@ public class GroupChatActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityGroupChatBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-       // getSupportActionBar().hide();
+
         binding.backArrow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -39,12 +39,13 @@ public class GroupChatActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
         final ArrayList<MessageModel> messageModels = new ArrayList<>();
-
         final String senderId = FirebaseAuth.getInstance().getUid();
-        binding.userName.setText("Group Chat");
         final ChatAdapter adapter = new ChatAdapter(messageModels, this);
+
+        binding.userName.setText("Group Chat");
         binding.chatRecyclerView.setAdapter(adapter);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         binding.chatRecyclerView.setLayoutManager(layoutManager);

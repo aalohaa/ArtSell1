@@ -36,6 +36,10 @@ import java.util.List;
 
 public class MyCartsFragment extends Fragment {
 
+    public MyCartsFragment() {
+        // Required empty public constructor
+    }
+
     FirebaseFirestore db;
     FirebaseAuth auth;
     TextView overTotalAmount;
@@ -46,9 +50,6 @@ public class MyCartsFragment extends Fragment {
     int totalBill;
     ProgressBar progressBar;
 
-    public MyCartsFragment() {
-        // Required empty public constructor
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.hardware.lights.LightState;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 
@@ -31,25 +32,14 @@ public class ViewAllActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     ViewAllAdapter viewAllAdapter;
     List<ViewAllModel> viewAllModelList;
-    Toolbar toolbar;
     ProgressBar progressBar;
+    ImageButton btnBack, btnCart;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_all);
 
-        toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onBackPressed();
-            }
-        });
         progressBar = findViewById(R.id.progressbar);
         progressBar.setVisibility(View.VISIBLE);
 
@@ -179,5 +169,13 @@ public class ViewAllActivity extends AppCompatActivity {
                 }
             });
         }
+
+        btnBack = findViewById(R.id.go_back);
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
     }
 }

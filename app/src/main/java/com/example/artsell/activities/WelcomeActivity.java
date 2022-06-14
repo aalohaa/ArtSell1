@@ -10,7 +10,7 @@ import androidx.viewpager.widget.ViewPager;
 import com.example.artsell.R;
 import com.example.artsell.adapters.SlideViewPagerAdapter;
 
-public class SlideActivity extends AppCompatActivity {
+public class WelcomeActivity extends AppCompatActivity {
 
    public static ViewPager viewPager;
     SlideViewPagerAdapter adapter;
@@ -24,7 +24,7 @@ public class SlideActivity extends AppCompatActivity {
         viewPager.setAdapter(adapter);
         if (isOpenAlread())
         {
-            Intent intent=new Intent(SlideActivity.this, MainActivity.class);
+            Intent intent=new Intent(WelcomeActivity.this, MainActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK| Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(intent);
         }
